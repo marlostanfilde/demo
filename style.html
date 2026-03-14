@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Landing style Billy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f6efe5;
+      --paper: #fffaf3;
+      --ink: #17211c;
+      --muted: #5f695f;
+      --line: rgba(23, 33, 28, 0.08);
+      --accent: #d9f170;
+      --accent-2: #cce9d0;
+      --accent-3: #ffe167;
+      --accent-4: #dce8ff;
+      --dark: #17211c;
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --shadow: 0 14px 40px rgba(23, 33, 28, 0.08);
+      --container: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.45;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .announcement {
+      background: var(--accent);
+      color: var(--dark);
+      text-align: center;
+      font-weight: 700;
+      padding: 12px 16px;
+      font-size: 14px;
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(16px);
+      background: rgba(246, 239, 229, 0.88);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      max-width: var(--container);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 18px 24px;
+    }
+
+    .brand {
+      font-size: 30px;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .pill, .btn {
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-weight: 700;
+      transition: 0.2s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .pill {
+      padding: 10px 16px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.55);
+      color: var(--ink);
+      font-size: 14px;
+    }
+
+    .btn {
+      padding: 14px 22px;
+      font-size: 15px;
+    }
+
+    .btn-primary {
+      background: var(--dark);
+      color: white;
+      box-shadow: var(--shadow);
+    }
+
+    .btn-primary:hover { transform: translateY(-1px); }
+
+    .btn-secondary {
+      background: white;
+      color: var(--ink);
+      border: 1px solid var(--line);
+    }
+
+    .section {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 72px 24px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 28px;
+      align-items: stretch;
+      padding-top: 42px;
+    }
+
+    .hero-copy, .hero-card {
+      background: var(--paper);
+      border-radius: 36px;
+      border: 1px solid rgba(23, 33, 28, 0.06);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-copy {
+      padding: 52px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(217, 241, 112, 0.35);
+      border: 1px solid rgba(23, 33, 28, 0.06);
+      width: fit-content;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      letter-spacing: -0.04em;
+      line-height: 0.95;
+    }
+
+    h1 {
+      font-size: clamp(42px, 8vw, 82px);
+      margin-bottom: 18px;
+    }
+
+    .lead {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 52ch;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 26px;
+    }
+
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .trust-row span {
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: white;
+      border: 1px solid var(--line);
+    }
+
+    .hero-card {
+      padding: 26px;
+      display: grid;
+      grid-template-rows: 1fr auto;
+      gap: 20px;
+      overflow: hidden;
+      min-height: 620px;
+    }
+
+    .visual {
+      border-radius: 28px;
+      background: linear-gradient(140deg, #fff8dc 0%, #dce8ff 48%, #cce9d0 100%);
+      position: relative;
+      overflow: hidden;
+      min-height: 420px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .blob, .blob2, .device, .stand {
+      position: absolute;
+      border-radius: 999px;
+    }
+
+    .blob {
+      width: 280px;
+      height: 280px;
+      background: rgba(255,255,255,0.55);
+      top: -30px;
+      right: -50px;
+    }
+
+    .blob2 {
+      width: 220px;
+      height: 220px;
+      background: rgba(217, 241, 112, 0.3);
+      left: -40px;
+      bottom: -40px;
+    }
+
+    .device {
+      width: 120px;
+      height: 320px;
+      background: linear-gradient(180deg, #1d2b23, #26352c);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.18);
+      transform: rotate(-10deg);
+      z-index: 2;
+    }
+
+    .device::before {
+      content: "";
+      position: absolute;
+      width: 78px;
+      height: 46px;
+      top: -18px;
+      left: 21px;
+      border-radius: 18px 18px 12px 12px;
+      background: linear-gradient(180deg, #394b40, #101713);
+    }
+
+    .stand {
+      width: 118px;
+      height: 46px;
+      background: #d9f170;
+      bottom: 80px;
+      z-index: 1;
+      border-radius: 18px;
+      box-shadow: 0 12px 30px rgba(23, 33, 28, 0.12);
+    }
+
+    .swatches {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .swatch {
+      padding: 14px;
+      border-radius: 22px;
+      min-height: 88px;
+      border: 1px solid rgba(23, 33, 28, 0.06);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      font-weight: 700;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.5);
+    }
+
+    .swatch small {
+      color: rgba(23, 33, 28, 0.7);
+      font-weight: 600;
+    }
+
+    .yellow { background: #ffe167; }
+    .blue { background: #dce8ff; }
+    .green { background: #cce9d0; }
+    .black { background: #d7dbd7; }
+
+    .mini-title {
+      font-size: 12px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--paper);
+      border-radius: var(--radius-xl);
+      padding: 26px;
+      border: 1px solid rgba(23, 33, 28, 0.06);
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 20px;
+      margin-bottom: 28px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(34px, 5vw, 58px);
+    }
+
+    .section-head p {
+      max-width: 46ch;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .product {
+      background: var(--paper);
+      border-radius: 28px;
+      padding: 18px;
+      border: 1px solid rgba(23, 33, 28, 0.06);
+      box-shadow: var(--shadow);
+    }
+
+    .product-visual {
+      height: 260px;
+      border-radius: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-visual .device { transform: rotate(-2deg); width: 84px; height: 220px; }
+    .product-visual .device::before { width: 58px; left: 13px; }
+    .product-visual .stand { width: 88px; height: 34px; bottom: 38px; }
+
+    .product-title {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin: 16px 0 8px;
+      font-weight: 800;
+      font-size: 19px;
+    }
+
+    .product p {
+      color: var(--muted);
+      font-size: 14px;
+      min-height: 42px;
+      margin: 0 0 16px;
+    }
+
+    .price {
+      font-weight: 800;
+      font-size: 20px;
+      margin-bottom: 14px;
+    }
+
+    .story {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .story-visual {
+      min-height: 480px;
+      border-radius: 34px;
+      background: linear-gradient(160deg, #ffe167, #f6efe5 55%, #cce9d0);
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(23, 33, 28, 0.06);
+    }
+
+    .story-visual::before,
+    .story-visual::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.55);
+    }
+
+    .story-visual::before {
+      width: 240px;
+      height: 240px;
+      top: -30px;
+      left: -20px;
+    }
+
+    .story-visual::after {
+      width: 190px;
+      height: 190px;
+      right: 20px;
+      bottom: 20px;
+    }
+
+    .quote-stack {
+      display: grid;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .quote {
+      padding: 20px 22px;
+      border-radius: 22px;
+      background: white;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .quote strong { color: var(--ink); display: block; margin-top: 8px; }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .feature {
+      padding: 26px;
+      border-radius: 28px;
+      background: var(--paper);
+      border: 1px solid rgba(23, 33, 28, 0.06);
+      box-shadow: var(--shadow);
+    }
+
+    .icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 18px;
+      background: rgba(217, 241, 112, 0.5);
+      display: grid;
+      place-items: center;
+      font-size: 22px;
+      margin-bottom: 14px;
+    }
+
+    .faq {
+      display: grid;
+      gap: 14px;
+    }
+
+    details {
+      background: var(--paper);
+      border-radius: 24px;
+      padding: 22px 24px;
+      border: 1px solid rgba(23, 33, 28, 0.06);
+      box-shadow: var(--shadow);
+    }
+
+    summary {
+      list-style: none;
+      cursor: pointer;
+      font-weight: 800;
+      font-size: 18px;
+    }
+
+    summary::-webkit-details-marker { display: none; }
+    details p { color: var(--muted); margin: 14px 0 0; }
+
+    .cta {
+      background: var(--dark);
+      color: white;
+      border-radius: 36px;
+      padding: 42px;
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: center;
+      box-shadow: var(--shadow);
+    }
+
+    .cta p { color: rgba(255,255,255,0.72); margin: 12px 0 0; }
+
+    .footer {
+      padding: 28px 24px 48px;
+      color: var(--muted);
+    }
+
+    .footer-inner {
+      max-width: var(--container);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      border-top: 1px solid var(--line);
+      padding-top: 22px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 1080px) {
+      .hero, .story, .products, .features, .grid-3 { grid-template-columns: 1fr 1fr; }
+      .hero-card { min-height: auto; }
+      .products { grid-template-columns: repeat(2, 1fr); }
+      .features { grid-template-columns: repeat(2, 1fr); }
+      .story { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 760px) {
+      .nav-links { display: none; }
+      .hero, .grid-3, .products, .features { grid-template-columns: 1fr; }
+      .swatches { grid-template-columns: repeat(2, 1fr); }
+      .hero-copy, .hero-card, .cta { padding: 26px; }
+      .section { padding: 56px 18px; }
+      .nav { padding: 14px 18px; }
+      .brand { font-size: 24px; }
+      .section-head { flex-direction: column; align-items: start; }
+      .cta { flex-direction: column; align-items: start; }
+    }
+  </style>
+</head>
+<body>
+  <div class="announcement">Aujourd’hui : une base offerte avec ta tondeuse — ajoute-la au panier</div>
+
+  <header class="header">
+    <nav class="nav">
+      <a href="#" class="brand">billy</a>
+      <div class="nav-links">
+        <a href="#collection">La collection</a>
+        <a href="#avantages">Pourquoi choisir billy</a>
+        <a href="#faq">FAQ</a>
+        <a href="#temoignages">Avis</a>
+      </div>
+      <div class="nav-actions">
+        <a class="pill" href="#">Connexion</a>
+        <a class="btn btn-primary" href="#collection">Acheter</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section hero">
+      <div class="hero-copy">
+        <div class="eyebrow">0 coupure • 0 brûlure • 0 poil incarné</div>
+        <h1>La tondeuse intime<br>pensée pour tous.</h1>
+        <p class="lead">Un design premium, des couleurs iconiques et une expérience simple, rapide et rassurante. Le tout dans un univers doux, inclusif et assumé.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#collection">Acheter maintenant</a>
+          <a class="btn btn-secondary" href="#avantages">Découvrir</a>
+        </div>
+        <div class="trust-row">
+          <span>Étanche sous la douche</span>
+          <span>Lame céramique</span>
+          <span>LED intégrée</span>
+          <span>Satisfait ou remboursé 30 jours</span>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="visual">
+          <div class="blob"></div>
+          <div class="blob2"></div>
+          <div class="device"></div>
+          <div class="stand"></div>
+        </div>
+        <div>
+          <div class="mini-title">Choisis ton style</div>
+          <div class="swatches">
+            <div class="swatch yellow"><span>Jaune</span><small>solaire & pop</small></div>
+            <div class="swatch blue"><span>Bleue</span><small>fraîche & cool</small></div>
+            <div class="swatch green"><span>Verte</span><small>douce & clean</small></div>
+            <div class="swatch black"><span>Noire</span><small>sobre & premium</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="grid-3">
+        <div class="card">
+          <h3>Ultra rapide</h3>
+          <p>Une routine simple, fluide et rassurante. Deux minutes suffisent pour être net, propre et tranquille.</p>
+        </div>
+        <div class="card">
+          <h3>Universelle</h3>
+          <p>Conçue pour lui, pour elle, pour tous. Une tondeuse inclusive pensée pour toutes les zones sensibles.</p>
+        </div>
+        <div class="card">
+          <h3>Stylée</h3>
+          <p>Un objet beau, coloré et assumé. Elle ne se cache pas au fond d’un tiroir, elle s’expose.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="collection">
+      <div class="section-head">
+        <div>
+          <div class="mini-title">La collection billy</div>
+          <h2>Quelle est ta couleur&nbsp;?</h2>
+        </div>
+        <p>Un layout boutique propre, pastel et premium avec des cartes produit très arrondies, une info simple et un achat immédiat.</p>
+      </div>
+
+      <div class="products">
+        <article class="product">
+          <div class="product-visual yellow">
+            <div class="device"></div>
+            <div class="stand"></div>
+          </div>
+          <div class="product-title"><span>La billy jaune</span><span>79€</span></div>
+          <p>La version la plus pop. Visuelle, fun, solaire.</p>
+          <a class="btn btn-primary" href="#">Ajouter au panier</a>
+        </article>
+
+        <article class="product">
+          <div class="product-visual blue">
+            <div class="device"></div>
+            <div class="stand"></div>
+          </div>
+          <div class="product-title"><span>La billy bleue</span><span>79€</span></div>
+          <p>Une couleur fraîche avec un look plus doux et moderne.</p>
+          <a class="btn btn-primary" href="#">Ajouter au panier</a>
+        </article>
+
+        <article class="product">
+          <div class="product-visual green">
+            <div class="device"></div>
+            <div class="stand"></div>
+          </div>
+          <div class="product-title"><span>La billy verte</span><span>79€</span></div>
+          <p>Une ambiance clean, premium et naturelle.</p>
+          <a class="btn btn-primary" href="#">Ajouter au panier</a>
+        </article>
+
+        <article class="product">
+          <div class="product-visual" style="background:#d7dbd7;">
+            <div class="device"></div>
+            <div class="stand"></div>
+          </div>
+          <div class="product-title"><span>La billy noire</span><span>79€</span></div>
+          <p>Le coloris minimal et élégant, ultra facile à vendre.</p>
+          <a class="btn btn-primary" href="#">Ajouter au panier</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section story" id="temoignages">
+      <div class="story-visual"></div>
+      <div class="card" style="padding:38px; border-radius:34px;">
+        <div class="mini-title">Aussi stylée que toi</div>
+        <h2 style="font-size: clamp(34px, 5vw, 58px); margin-bottom: 16px;">Un univers doux,<br>franc et sans tabou.</h2>
+        <p style="color: var(--muted); font-size: 18px; max-width: 44ch;">Le site mélange parfaitement e-commerce, marque lifestyle et ton conversationnel. C’est cette combinaison qui donne le style : pastel, arrondi, accessible, mais premium.</p>
+        <div class="quote-stack">
+          <div class="quote">“Se raser sous la douche, ça change tout.”<strong>— Philippe</strong></div>
+          <div class="quote">“Elle est trop belle sur sa base de chargement.”<strong>— Cynthia</strong></div>
+          <div class="quote">“Enfin une marque qui rend ce produit beau et simple.”<strong>— Jeremy</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="avantages">
+      <div class="section-head">
+        <div>
+          <div class="mini-title">Pourquoi ce style fonctionne</div>
+          <h2>Les codes à reprendre</h2>
+        </div>
+        <p>Voici les piliers du style du site : formes généreuses, couleurs tendres, copy directe, bénéfices très lisibles et blocs très respirants.</p>
+      </div>
+
+      <div class="features">
+        <div class="feature">
+          <div class="icon">✦</div>
+          <h3>Esthétique & design</h3>
+          <p>Des cartes très arrondies, un fond crème, des couleurs pastel et une vraie sensation premium.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">♥</div>
+          <h3>Inclusive & directe</h3>
+          <p>Un ton simple, sans jargon, qui parle comme une marque proche de sa communauté.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">✓</div>
+          <h3>Bénéfices rapides</h3>
+          <p>Les promesses sont visibles partout : rapide, safe, étanche, zéro irritation.</p>
+        </div>
+        <div class="feature">
+          <div class="icon">●</div>
+          <h3>Palette cohérente</h3>
+          <p>Jaune, vert, bleu, noir sur base crème : ça donne une identité visuelle mémorable.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="section-head">
+        <div>
+          <div class="mini-title">0 tabou, 0 complexe</div>
+          <h2>Questions fréquentes</h2>
+        </div>
+        <p>Une FAQ très visible aide à lever les peurs, surtout sur un produit intime ou technique.</p>
+      </div>
+
+      <div class="faq">
+        <details open>
+          <summary>Peut-on l’utiliser sous la douche ?</summary>
+          <p>Oui. Le style du site met fortement en avant la simplicité d’usage sous la douche, avec un discours rassurant et sans complication.</p>
+        </details>
+        <details>
+          <summary>Est-ce adapté à toutes les zones sensibles ?</summary>
+          <p>Oui. Toute la communication repose sur une promesse universelle : pour lui, pour elle, pour tous.</p>
+        </details>
+        <details>
+          <summary>Qu’est-ce qui fait le “même style” visuellement ?</summary>
+          <p>Le fond crème, les blocs très arrondis, la hiérarchie typographique nette, les pastels, les CTA noirs et la présentation produit simple mais désirable.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="cta">
+        <div>
+          <div class="mini-title" style="color: rgba(255,255,255,0.62);">Prêt à l’adapter à votre marque ?</div>
+          <h2 style="font-size: clamp(34px, 5vw, 54px);">Je peux vous faire<br>la version complète.</h2>
+          <p>Cette base reprend la direction artistique générale du site : premium, pastel, moderne, rond et ultra e-commerce.</p>
+        </div>
+        <a class="btn btn-secondary" href="#" style="white-space: nowrap;">Lancer ma version</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>© 2026 — Base inspirée du style Billy</span>
+      <span>Header • Hero • Cartes • Produits • FAQ • CTA</span>
+    </div>
+  </footer>
+</body>
+</html>
