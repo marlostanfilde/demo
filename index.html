@@ -1,40 +1,40 @@
-body {
-    background-color: #f0f0f0;
-    font-family: 'Arial', sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Ma Boutique Virtuelle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-.shop-container {
-    display: flex;
-    gap: 30px;
-    margin-top: 50px;
-}
+    <h1>Ma Garde-Robe Interactive</h1>
+    
+    <div class="shop-container">
+        <!-- Article 1 -->
+        <div class="item" data-name="Veste Denim">
+            <div class="image-wrapper">
+                <img src="https://via.placeholder.com/200x250?text=Veste" alt="Veste">
+            </div>
+            <p>Veste Denim</p>
+        </div>
 
-.item {
-    background: white;
-    padding: 15px;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    transition: all 0.3s ease; /* Transition fluide */
-    cursor: pointer;
-}
+        <!-- Article 2 -->
+        <div class="item" data-name="Chapeau">
+            <div class="image-wrapper">
+                <img src="https://via.placeholder.com/200x250?text=Chapeau" alt="Chapeau">
+            </div>
+            <p>Chapeau Chic</p>
+        </div>
 
-.image-wrapper img {
-    width: 200px;
-    border-radius: 10px;
-    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
+        <!-- Article 3 -->
+        <div class="item" data-name="Sneakers">
+            <div class="image-wrapper">
+                <img src="https://via.placeholder.com/200x250?text=Sneakers" alt="Sneakers">
+            </div>
+            <p>Sneakers Neon</p>
+        </div>
+    </div>
 
-/* --- EFFETS AU SURVOL (MOUSE HOVER) --- */
-
-.item:hover {
-    transform: translateY(-10px); /* L'objet monte */
-    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-}
-
-.item:hover img {
-    transform: scale(1.1) rotate(5deg); /* L'image zoome et tourne un peu */
-}
+    <script src="script.js"></script>
+</body>
+</html>
