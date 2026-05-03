@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma Boutique Virtuelle 3D</title>
+    <style>
+        /* CSS : LE LOOK DU SITE */
+        :root {
+            --primary: #ff4d6d;
+            --bg: #0f0f12;
+            --card-bg: #1e1e26;
+            --text: #ffffff;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        header {
+            padding: 40px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            background: linear-gradient(to right, #ff4d6d, #ff8fa3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            padding: 20px;
+            max-width: 1200px;
+        }
+
+        /* LA CARTE QUI BOUGE */
+        .card {
+            background: var(--card-bg);
+            width: 280px;
+            height: 380px;
+            border-radius: 20px;
+            position: relative;
+            transform-style: preserve-3d; /* Permet l'effet 3D */
+            transition: transform 0.1s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        /* L'IMAGE (EMOJI ICI POUR L'EXEMPLE) */
+        .clothing-icon {
+            font-size: 100px;
+            transform: translateZ(60px); /* Fait sortir l'habit de la carte */
+            transition: 0.3s;
+            filter: drop-shadow(0 20px 10px rgba(0,0,0,0.3));
+        }
+
+        .info {
+            transform: translateZ(30px);
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .info h2 { margin: 0; color: var(--primary); }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>VIRTUAL CLOSET</h1>
+        <p>Survole les vêtements avec ta souris</p>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <div class="clothing-icon">👕</div>
+            <div class="info">
+                <h2>T-Shirt Tech</h2>
+                <p>Néon Rose</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="clothing-icon">🧥</div>
+            <div class="info">
+                <h2>Veste</h2>
+                <p>Bleu Arctique</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="clothing-icon">👟</div>
+            <div class="info">
+                <h2>Sneakers</h2>
+                <p>Édition Limitée</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JAVASCRIPT : LE MOUVEMENT
+        const cards = document.querySelectorAll('.card');
+
+        cards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left; // position X souris dans la carte
+                const y = e.clientY - rect.top;  // position Y souris dans la carte
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                // Calcul de l'inclinaison
+                const rotateX = (centerY - y) / 10;
+                const rotateY = (x - centerX) / 10;
+                
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            });
+
+            // Remise à zéro quand la souris quitte la carte
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg)`;
+                card.style.transition = "transform 0.5s ease";
+            });
+
+            card.addEventListener('mouseenter', () => {
+                card.style.transition = "none";
+            });
+        });
+    </script>
+</body>
+</html>
