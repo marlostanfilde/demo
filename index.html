@@ -1,259 +1,40 @@
-export default function LandingPageInspired() {
-  const products = [
-    { name: "Édition Sauge", price: "79 €", tag: "Le best-seller" },
-    { name: "Édition Nuit", price: "79 €", tag: "Le plus sobre" },
-    { name: "Édition Azur", price: "79 €", tag: "Le plus frais" },
-    { name: "Édition Soleil", price: "79 €", tag: "Le plus audacieux" },
-  ];
-
-  const benefits = [
-    {
-      title: "Pensé pour les zones sensibles",
-      text: "Une expérience simple, rapide et confortable, avec une approche design et rassurante.",
-    },
-    {
-      title: "Utilisation rapide au quotidien",
-      text: "Une routine efficace en quelques minutes, sans complexité et sans surcharge de fonctionnalités.",
-    },
-    {
-      title: "Design assumé",
-      text: "Un objet beau, moderne et discret, qui trouve naturellement sa place dans une salle de bain.",
-    },
-    {
-      title: "Pour tous les styles",
-      text: "Une marque inclusive, avec un ton direct, positif et sans tabou pour parler du soin intime.",
-    },
-  ];
-
-  const testimonials = [
-    {
-      quote: "Enfin une page produit claire, esthétique et rassurante du début à la fin.",
-      author: "Camille",
-    },
-    {
-      quote: "La structure donne envie d’acheter sans noyer l’utilisateur sous trop d’infos.",
-      author: "Nora",
-    },
-    {
-      quote: "Le mélange branding, réassurance et simplicité fonctionne vraiment bien.",
-      author: "Yanis",
-    },
-  ];
-
-  const faqs = [
-    {
-      q: "À qui s’adresse ce produit ?",
-      a: "À toute personne cherchant une solution de soin intime simple, esthétique et pensée pour le confort.",
-    },
-    {
-      q: "Est-ce adapté à une routine sous la douche ?",
-      a: "Oui, la page prévoit un bloc de réassurance pour mettre en avant la praticité et l’usage quotidien.",
-    },
-    {
-      q: "Pourquoi cette structure convertit bien ?",
-      a: "Parce qu’elle alterne promesse, preuve, choix produit, bénéfices, témoignages et réponses aux objections.",
-    },
-    {
-      q: "Peut-on l’adapter à une autre marque ?",
-      a: "Oui, facilement. Le framework visuel et commercial peut servir pour d’autres produits e-commerce premium.",
-    },
-  ];
-
-  return (
-    <div className="min-h-screen bg-[#f7f3ee] text-neutral-900">
-      <div className="w-full bg-neutral-900 px-4 py-3 text-center text-sm font-medium text-white">
-        Offre du moment : un accessoire offert avec votre commande
-      </div>
-
-      <header className="sticky top-0 z-30 border-b border-black/5 bg-[#f7f3ee]/90 backdrop-blur">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          <div className="text-2xl font-semibold tracking-tight">studio.</div>
-          <nav className="hidden gap-8 text-sm md:flex">
-            <a href="#produits" className="hover:opacity-70">Collection</a>
-            <a href="#avantages" className="hover:opacity-70">Pourquoi nous</a>
-            <a href="#avis" className="hover:opacity-70">Avis</a>
-            <a href="#faq" className="hover:opacity-70">FAQ</a>
-          </nav>
-          <button className="rounded-full bg-neutral-900 px-5 py-2 text-sm font-medium text-white shadow-sm transition hover:-translate-y-0.5">
-            Acheter
-          </button>
-        </div>
-      </header>
-
-      <section className="mx-auto grid max-w-7xl items-center gap-10 px-6 py-16 md:grid-cols-2 md:py-24">
-        <div>
-          <div className="mb-4 inline-flex rounded-full border border-black/10 bg-white px-4 py-2 text-xs font-medium uppercase tracking-[0.18em] text-neutral-600">
-            Design • confort • simplicité
-          </div>
-          <h1 className="max-w-xl text-5xl font-semibold leading-tight md:text-7xl">
-            Une landing page e-commerce qui vend sans en faire trop.
-          </h1>
-          <p className="mt-6 max-w-xl text-lg leading-8 text-neutral-700">
-            Une structure inspirée des meilleures pages DTC : promesse claire, visuels premium, réassurance immédiate,
-            choix produit évident et tunnel de conversion fluide.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-4">
-            <button className="rounded-full bg-neutral-900 px-6 py-3 text-sm font-medium text-white shadow-lg transition hover:-translate-y-0.5">
-              Voir la collection
-            </button>
-            <button className="rounded-full border border-black/10 bg-white px-6 py-3 text-sm font-medium transition hover:bg-black hover:text-white">
-              Découvrir la marque
-            </button>
-          </div>
-          <div className="mt-8 flex flex-wrap gap-6 text-sm text-neutral-600">
-            <span>✓ Satisfait ou remboursé 30 jours</span>
-            <span>✓ Livraison offerte</span>
-            <span>✓ Paiement sécurisé</span>
-          </div>
-        </div>
-
-        <div className="relative">
-          <div className="absolute -left-6 -top-6 h-24 w-24 rounded-full bg-[#d9e7d5] blur-2xl" />
-          <div className="absolute -bottom-8 -right-8 h-28 w-28 rounded-full bg-[#f3d566] blur-2xl" />
-          <div className="grid gap-4 md:grid-cols-2">
-            <div className="rounded-[2rem] bg-[#dfe9db] p-6 shadow-xl">
-              <div className="aspect-[4/5] rounded-[1.5rem] bg-white/70" />
-            </div>
-            <div className="space-y-4">
-              <div className="rounded-[2rem] bg-[#1f3b8f] p-6 shadow-xl">
-                <div className="aspect-square rounded-[1.5rem] bg-white/20" />
-              </div>
-              <div className="rounded-[2rem] bg-[#f2d34f] p-6 shadow-xl">
-                <div className="aspect-[4/3] rounded-[1.5rem] bg-white/40" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="border-y border-black/5 bg-white">
-        <div className="mx-auto grid max-w-7xl gap-6 px-6 py-10 text-center text-sm text-neutral-700 md:grid-cols-4">
-          <div>0 friction dans la lecture</div>
-          <div>Hiérarchie visuelle très claire</div>
-          <div>Choix produit simplifié</div>
-          <div>Réassurance à chaque étape</div>
-        </div>
-      </section>
-
-      <section id="produits" className="mx-auto max-w-7xl px-6 py-20">
-        <div className="max-w-2xl">
-          <p className="text-sm uppercase tracking-[0.2em] text-neutral-500">Collection</p>
-          <h2 className="mt-3 text-4xl font-semibold md:text-5xl">Quatre variantes, une même expérience premium.</h2>
-          <p className="mt-4 text-lg text-neutral-700">
-            Une section conçue pour rendre le choix immédiat : visuels cohérents, prix lisible, CTA rapide et univers de marque fort.
-          </p>
-        </div>
-
-        <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-          {products.map((product, index) => (
-            <div key={product.name} className="overflow-hidden rounded-[2rem] bg-white shadow-sm ring-1 ring-black/5 transition hover:-translate-y-1 hover:shadow-xl">
-              <div className={`aspect-[4/5] ${index === 0 ? 'bg-[#dfe9db]' : index === 1 ? 'bg-[#2c2c2c]' : index === 2 ? 'bg-[#b8d4f5]' : 'bg-[#f2d34f]'}`} />
-              <div className="p-6">
-                <div className="mb-3 inline-flex rounded-full bg-neutral-100 px-3 py-1 text-xs font-medium text-neutral-600">
-                  {product.tag}
-                </div>
-                <h3 className="text-xl font-semibold">{product.name}</h3>
-                <p className="mt-2 text-neutral-600">{product.price}</p>
-                <button className="mt-5 w-full rounded-full bg-neutral-900 px-4 py-3 text-sm font-medium text-white transition hover:opacity-90">
-                  Ajouter au panier
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section id="avantages" className="bg-[#efe7dc]">
-        <div className="mx-auto max-w-7xl px-6 py-20">
-          <div className="grid gap-10 md:grid-cols-2">
-            <div>
-              <p className="text-sm uppercase tracking-[0.2em] text-neutral-500">Pourquoi cette structure fonctionne</p>
-              <h2 className="mt-3 text-4xl font-semibold md:text-5xl">Une page qui répond aux objections avant qu’elles n’apparaissent.</h2>
-            </div>
-            <div className="grid gap-4 sm:grid-cols-2">
-              {benefits.map((item) => (
-                <div key={item.title} className="rounded-[2rem] bg-white p-6 shadow-sm ring-1 ring-black/5">
-                  <h3 className="text-lg font-semibold">{item.title}</h3>
-                  <p className="mt-3 text-sm leading-7 text-neutral-700">{item.text}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="avis" className="mx-auto max-w-7xl px-6 py-20">
-        <div className="max-w-2xl">
-          <p className="text-sm uppercase tracking-[0.2em] text-neutral-500">Preuve sociale</p>
-          <h2 className="mt-3 text-4xl font-semibold md:text-5xl">Des témoignages pour renforcer la confiance.</h2>
-        </div>
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
-          {testimonials.map((t) => (
-            <div key={t.author} className="rounded-[2rem] bg-white p-8 shadow-sm ring-1 ring-black/5">
-              <p className="text-lg leading-8 text-neutral-800">“{t.quote}”</p>
-              <p className="mt-6 text-sm font-medium text-neutral-500">— {t.author}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="bg-neutral-900 text-white">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 py-20 md:grid-cols-2">
-          <div>
-            <p className="text-sm uppercase tracking-[0.2em] text-white/60">Univers de marque</p>
-            <h2 className="mt-3 text-4xl font-semibold md:text-5xl">Une identité directe, moderne et mémorable.</h2>
-            <p className="mt-5 max-w-xl text-lg leading-8 text-white/75">
-              Le secret n’est pas seulement la mise en page. C’est l’alignement entre ton, visuels, promesse, design et clarté commerciale.
-            </p>
-          </div>
-          <div className="rounded-[2rem] bg-white/10 p-8 backdrop-blur">
-            <div className="grid gap-4 sm:grid-cols-2">
-              <div className="rounded-[1.5rem] bg-white/10 p-5">Esthétique premium</div>
-              <div className="rounded-[1.5rem] bg-white/10 p-5">Ton accessible</div>
-              <div className="rounded-[1.5rem] bg-white/10 p-5">CTA répétés</div>
-              <div className="rounded-[1.5rem] bg-white/10 p-5">Parcours rassurant</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="faq" className="mx-auto max-w-5xl px-6 py-20">
-        <div className="text-center">
-          <p className="text-sm uppercase tracking-[0.2em] text-neutral-500">FAQ</p>
-          <h2 className="mt-3 text-4xl font-semibold md:text-5xl">Les questions qu’un visiteur se pose avant d’acheter.</h2>
-        </div>
-        <div className="mt-12 space-y-4">
-          {faqs.map((item) => (
-            <details key={item.q} className="group rounded-[1.75rem] bg-white p-6 shadow-sm ring-1 ring-black/5">
-              <summary className="cursor-pointer list-none text-lg font-medium">{item.q}</summary>
-              <p className="mt-4 max-w-3xl text-neutral-700">{item.a}</p>
-            </details>
-          ))}
-        </div>
-      </section>
-
-      <section className="bg-[#efe7dc]">
-        <div className="mx-auto max-w-7xl px-6 py-20">
-          <div className="rounded-[2.5rem] bg-neutral-900 px-8 py-12 text-white md:px-12 md:py-16">
-            <div className="max-w-3xl">
-              <p className="text-sm uppercase tracking-[0.2em] text-white/60">Dernier bloc de conversion</p>
-              <h2 className="mt-3 text-4xl font-semibold md:text-6xl">Tu veux ce style pour ta marque ?</h2>
-              <p className="mt-5 text-lg leading-8 text-white/75">
-                Cette base peut être transformée en vraie homepage Shopify, page produit ou landing page complète avec ton branding, tes visuels et ton offre.
-              </p>
-              <div className="mt-8 flex flex-wrap gap-4">
-                <button className="rounded-full bg-white px-6 py-3 text-sm font-medium text-neutral-900 transition hover:-translate-y-0.5">
-                  Lancer le projet
-                </button>
-                <button className="rounded-full border border-white/20 px-6 py-3 text-sm font-medium text-white transition hover:bg-white hover:text-neutral-900">
-                  Voir la démo
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-  );
+body {
+    background-color: #f0f0f0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+.shop-container {
+    display: flex;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.item {
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease; /* Transition fluide */
+    cursor: pointer;
+}
+
+.image-wrapper img {
+    width: 200px;
+    border-radius: 10px;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* --- EFFETS AU SURVOL (MOUSE HOVER) --- */
+
+.item:hover {
+    transform: translateY(-10px); /* L'objet monte */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.item:hover img {
+    transform: scale(1.1) rotate(5deg); /* L'image zoome et tourne un peu */
+}
